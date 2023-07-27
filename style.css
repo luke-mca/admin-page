@@ -1,12 +1,34 @@
+:root {
+    --blue:  rgb(47, 140, 216);
+    --dgray: rgb(204, 204, 204);
+    --lgray: rgb(235, 235, 235);
+    --white: rgb(253, 253, 253);
+}
+
 body {
     display: grid;
     grid: auto / 1fr 3fr;
     margin: 0px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+img {
+    height: 1.7rem;
+    margin: 4px;
+}
+button {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 12px;
+    border-width: 0px;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: bold;
 }
 
 
 .sidebar {
-    background-color: rgb(57, 166, 255);
+    background-color: var(--blue);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,13 +36,13 @@ body {
 }
 .sidebar>h1 {
     align-self: center;
-    color: white;
+    color: var(--white);
     font-size: 32px;
     font-weight: bolder;
 }
 .sidebar>ul {
     list-style-type: none;
-    color: white;
+    color: var(--white);
     font-size: 24px;
     font-weight: bold;
     padding: 12px;
@@ -28,15 +50,64 @@ body {
 
 
 .main {
-    background-color: rgb(204, 204, 204);
+    background-color: var(--dgray);
     display: grid;
-    grid: 14vh auto / 1fr;
+    grid: 12vh auto / 1fr;
 }
 .main>.header {
-    background-color: rgb(238, 238, 238);
+    background-color: var(--lgray);
     display: grid;
-    grid: 1fr 1fr / 1fr 1fr;
+    grid: 40% auto / 2fr 1fr;
+    padding: 2px;
+    gap: 12px;
 }
+    .header>.search {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+        .search>input {
+            flex: 1;
+            border-radius: 8px;
+            background-color: var(--dgray);
+            color: black;
+            font-size: 16px;
+            border-width: 1px;
+        }
+    .header>.account {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .header>.hello {
+        display: grid;
+        grid: auto auto / auto 1fr;
+        justify-content: start;
+        align-content:start
+    }
+        .hello>img {
+            grid-row: 1/3;
+            scale: 1.6;
+            padding: 12px;
+        }
+        .hello>* {
+            align-self: center;
+            margin: 0px;
+        }
+        .hello>p {
+            align-self: self-end;
+            font-size: 10px;
+        }
+        .hello>h2 {
+            align-self:self-start;
+        }
+    .header>.buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
 .main>.content {
     display: grid;
@@ -47,9 +118,21 @@ body {
     .content>.projects {
         grid-row: 1/3;
         display: grid;
-        grid: repeat(3, 1fr) / 1fr 1fr;
+        grid: 20px repeat(3, 1fr) / 1fr 1fr;
         gap: 12px;
     }
-    .projects>div {
-        background-color: white;
+        .projects>div {
+            background-color: var(--white);
+        }
+    .content>.announce {
+        background-color: var(--white);
+    }
+    .content>.trending {
+        background-color: var(--white);
+    }
+    .title {
+        grid-column: 1/3;
+        background-color: var(--dgray);
+        font-weight: bold;
+        margin: 0px;
     }
